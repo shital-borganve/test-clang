@@ -1,0 +1,16 @@
+name: Test Clang Tools
+
+on:
+  repository_dispatch:
+    types:
+      - clang-tools-run
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger Clang Tools Action
+        uses: owner-name/clang-tools@main # Replace with your repository and branch name
+        with:
+          input-file: your_source_code.cpp # Replace with your actual source code file
